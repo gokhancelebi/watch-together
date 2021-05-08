@@ -1,83 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+        }
+
+        video {
+            z-index: 1;
+        }
+
+        .videosubbar {
+            width: 100%;
+            bottom: 200px !important;
+            font-size: 50px !important;
+            text-align: center !important;
+            z-index: 99999;
+            box-sizing: border-box;
+        }
+    </style>
+
 </head>
 <body>
 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-</style>
-
-<video id="video" width="100%" height="100%" controls>
-    <source src="video.mp4" type="video/mp4">
+<video id="video"  width="600px" height="400px" controls>
+    <source src="http://puanhesapla.net/movie/video.mp4" type="video/mp4">
+    <track label="Turkish" kind="captions" srclang="tr" lang="tr" src="http://puanhesapla.net/movie/sub.vtt" default>
 </video>
 
+
+<script src="captionator.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-
-    var conn = new WebSocket('ws://localhost:8080');
-    var video = document.getElementById("video");
-    var status = true;
-
-
-    video.onplay = function (){
-        conn.send(JSON.stringify({
-            currentTime : video.currentTime,
-            paused: false
-        }));
-    }
-    video.onpause = function (){
-        conn.send(JSON.stringify({
-            currentTime : video.currentTime,
-            paused: true
-        }));
-    }
-
-    function updateVideo(data) {
-
-        if(status == false) return;
-
-        if (data.currentTime != video.currentTime ) {
-            video.currentTime  = data.currentTime;
-        }
-
-        if (data.paused == true) {
-            video.pause();
-        }
-
-        if (data.paused == false) {
-            video.play();
-        }
-
-    }
-
-    conn.onmessage = function (e) {
-        console.log(data);
-        var data = JSON.parse(e.data);
-        updateVideo(data);
-    };
-
-    function clickToVideo(){
-        status = true;
-
-        console.log("tiklandi");
-
-        conn.send(JSON.stringify({
-            currentTime : video.currentTime,
-        }));
-    }
-
-    $(function (){
-        $("video").click(function (){
-            clickToVideo();
-        });
-    })
-
-</script>
+<script src="socket.js"></script>
 </body>
 </html>
