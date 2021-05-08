@@ -14,13 +14,13 @@
 </style>
 
 <video id="video" width="100%" height="100%" controls>
-    <source src="podcast.mp4" type="video/mp4">
+    <source src="video.mp4" type="video/mp4">
 </video>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 
-    var conn = new WebSocket('ws://'+ <?php echo "asdas"?> +':8080');
+    var conn = new WebSocket('ws://localhost:8080');
     var video = document.getElementById("video");
     var status = true;
 
