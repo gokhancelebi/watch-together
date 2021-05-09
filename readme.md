@@ -6,3 +6,9 @@
 - After everyone start movie if you want to set all current times the same just click to center of video for two times.
 
 That is all i want to say for now. If you want new features send me email. [https://gokhancelebi.net/iletisim/](https://gokhancelebi.net/iletisim/)
+
+- Add Vioce Chat
+- Add Multipart and multisubtitle support
+- Add Upload from trnt file
+- Add Channel structure
+- Add Feature for controlling video by guesses
