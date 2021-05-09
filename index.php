@@ -33,8 +33,8 @@
 <body>
 
 <video id="video"  width="600px" height="400px" controls>
-    <source src="http://puanhesapla.net/movie/video.mp4" type="video/mp4">
-    <track label="Turkish" kind="captions" srclang="tr" lang="tr" src="http://puanhesapla.net/movie/sub.vtt" default>
+    <source src="video.mp4" type="video/mp4">
+    <track label="Turkish" kind="captions" srclang="tr" lang="tr" src="sub.vtt" default>
 </video>
 
 

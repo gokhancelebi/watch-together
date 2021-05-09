@@ -1,5 +1,5 @@
 
-var conn = new WebSocket('ws://162.55.60.146:8080');
+var conn = new WebSocket('ws://socket-url:8080');
 var vid = document.getElementById("video");
 var status = false;
 
