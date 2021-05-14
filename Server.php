@@ -2,7 +2,6 @@
 
 require   'vendor/autoload.php';
 
-
 use Ratchet\Server\IoServer;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
